@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 
 function Storiespage() {
   const [data, setData] = useState([]);
+  const [displayButton, setDisplayButton] = useState(false);
   const [currentOffset, setCurrentOffset] = useState(0);
   const pageRef = useRef(null);
 
@@ -25,6 +26,8 @@ function Storiespage() {
     getData();
   }, [currentOffset]);
 
+  
+
   return (
     <div
       ref={pageRef}
@@ -39,6 +42,12 @@ function Storiespage() {
           console.log("end");
           setCurrentOffset((prev) => prev + 8);
         }
+        if(elem.scrollTop>30){
+          setDisplayButton(true)
+        }
+        else{
+          setDisplayButton(false)
+        }
       }}
     >
       <Navbar />
@@ -48,22 +57,20 @@ function Storiespage() {
           return <Cards curElem={curElem} />;
         })}
       </div>
-      <div
-        className="scrollUp"
-        onClick={() => {
-          pageRef.current.scrollTo(
-            {
-              top:0,
-              behavior:"smooth"
-            }
-          
-          )
-          
-        }}
-        style={pageRef.current?.scrollTop > 40 ? {display:"block"} : { display: "none" }}
-      >
-        <FontAwesomeIcon icon={faArrowUp} />
-      </div>
+      {displayButton && (
+        <div
+          className="scrollUp"
+          onClick={() => {
+            pageRef.current.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          // style={pageRef.current?.scrollTop > 40 ? {display:"block"} : { display: "none" }}
+        >
+          <FontAwesomeIcon icon={faArrowUp} />
+        </div>
+      )}
     </div>
   );
 }

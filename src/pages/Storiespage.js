@@ -23,8 +23,6 @@ function Storiespage() {
     getData();
   }, [currentOffset]);
 
-  
-
   return (
     <div
       ref={pageRef}
@@ -58,7 +56,6 @@ function Storiespage() {
               behavior: "smooth",
             });
           }}
-
         >
           <FontAwesomeIcon icon={faArrowUp} />
         </div>

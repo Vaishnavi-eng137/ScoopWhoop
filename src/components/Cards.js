@@ -4,7 +4,7 @@ function Cards(props) {
   const { curElem } = props;
   return (
     <div className="card">
-      <img src={curElem.feature_img}></img>
+      <img src={curElem.feature_img} className="card-img-top" alt="cards" style={{objectFit:"cover"}}></img>
       <div className="title">
         <p>{curElem.title}</p>
       </div>

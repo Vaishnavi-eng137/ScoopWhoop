@@ -1,6 +1,6 @@
 
 import './App.css';
-import Storiespage from "./Storiespage"
+import Storiespage from "./pages/Storiespage"
 
 function App() {
   return (

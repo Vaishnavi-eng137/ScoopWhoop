@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch,faBookmark,faHamburger} from '@fortawesome/free-solid-svg-icons'
 
 function Navbar() {
   return (
@@ -49,6 +51,11 @@ function Navbar() {
               </a>
             </li>
           </ul>
+        </div>
+        <div className="sideIcon">
+          <FontAwesomeIcon icon={faSearch} />
+          <FontAwesomeIcon icon={faBookmark} />
+          <FontAwesomeIcon icon={faHamburger} />
         </div>
       </nav>
      </div>

@@ -5,24 +5,13 @@ import { faSearch,faBookmark,faHamburger} from '@fortawesome/free-solid-svg-icon
 function Navbar() {
   return (
     <div className="fixed-top">
-      <nav className="navbar navbar-expand-lg nvbar justify-content-between">
+      <nav className="navbar navbar-expand-lg nvbar">
         <img
           src="https://s4.scoopwhoop.com/anj/sw120-x-120/682842409.png"
           height="50px"
           width="50px"
           style={{padding:".3rem"}}
         ></img>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">

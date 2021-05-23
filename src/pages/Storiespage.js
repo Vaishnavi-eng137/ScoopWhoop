@@ -15,11 +15,8 @@ function Storiespage() {
     const response = await fetch(
       `https://www.scoopwhoop.com/api/v4/read/all/?offset=${currentOffset}&limit=12`
     );
-    //    console.log(response)
     const dataList = await response.json();
     setData([...data, ...dataList.data]);
-    //    console.log(dataList)
-    console.log(pageRef.current?.clientHeight);
   };
 
   useEffect(() => {
@@ -33,13 +30,8 @@ function Storiespage() {
       ref={pageRef}
       className="Mainpage"
       onScroll={(e) => {
-        console.log(e.currentTarget.scrollTop);
         const elem = e.target;
         if (elem.scrollHeight - elem.scrollTop - elem.clientHeight < 10) {
-          console.log(elem.scrollTop, "top");
-          console.log(elem.clientHeight, "clientheight");
-          console.log(elem.scrollHeight, "scrollheight");
-          console.log("end");
           setCurrentOffset((prev) => prev + 8);
         }
         if(elem.scrollTop>30){
@@ -66,7 +58,7 @@ function Storiespage() {
               behavior: "smooth",
             });
           }}
-          // style={pageRef.current?.scrollTop > 40 ? {display:"block"} : { display: "none" }}
+
         >
           <FontAwesomeIcon icon={faArrowUp} />
         </div>

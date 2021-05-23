@@ -35,7 +35,7 @@ function Cards(props) {
               Math.abs(new Date() - new Date(curElem.pub_date)) /
                 (1000 * 60 * 60 * 24)
             )}
-            days ago | {curElem.readtime}
+         {` Days ago | ${curElem.readtime}`}
           </p>
         </div>
       </div>

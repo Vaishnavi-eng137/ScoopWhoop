@@ -30,7 +30,7 @@ function Storiespage() {
       onScroll={(e) => {
         const elem = e.target;
         if (elem.scrollHeight - elem.scrollTop - elem.clientHeight < 10) {
-          setCurrentOffset((prev) => prev + 8);
+          setCurrentOffset((prev) => prev + 12);
         }
         if(elem.scrollTop>30){
           setDisplayButton(true)
